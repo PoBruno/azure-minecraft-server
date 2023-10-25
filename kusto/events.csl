@@ -1,0 +1,4 @@
+ContainerEvent_CL 
+| extend Instance=tostring(split(ContainerGroup_s,'-')[-1])
+| project TimeGenerated, Instance, Message
+| order by TimeGenerated desc

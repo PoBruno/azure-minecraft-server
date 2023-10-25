@@ -1,0 +1,7 @@
+ContainerInstanceLog_CL 
+| where ContainerGroup_s !contains "bedrock" // Bedrock is Alpha software
+| where Message !contains "info" 
+| where Message contains "connect" or Message contains "[/" 
+| extend MessageWithoutTimestamp=replace(@'\[[^\]]* (\w+)\]: ', @'[\1] ', Message)
+| order by TimeGenerated desc
+| project TimeGenerated, ContainerGroup_s, Message=tolower(MessageWithoutTimestamp)
