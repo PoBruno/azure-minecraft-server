@@ -1,5 +1,3 @@
-Claro, vou traduzir o README.md do seu repositório para o português:
-
 # Servidor Minecraft alimentado por Docker e Azure Container Instance
 Este repositório implanta o [itzg/minecraft-server](https://hub.docker.com/r/itzg/minecraft-server) como uma [Azure Container Instance](https://azure.microsoft.com/en-us/services/container-instances/), usando o Terraform.
 
